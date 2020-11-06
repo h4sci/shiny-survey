@@ -1,0 +1,48 @@
+---
+title: "Shiny Survey Results"
+author: "Shiny Survey Team"
+date: "11/6/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Opinions about fruit
+
+
+```{r getdatasetup, include=FALSE, echo=FALSE}
+#install.packages("ggplot2")
+library(ggplot2)
+
+# Survey results question 1
+q1 <- sample(c("Apples","Bananas"), 50, replace = TRUE, prob=c(0.8, 0.2))
+# Survey results question 2
+
+df <- data.frame(q1) 
+
+  
+```
+
+
+This survey was completed by `r length(q1)` participants.
+
+
+```{r question1, echo=FALSE}
+
+# Colors
+fruitcolors=c("#86D76E", "#E3F25A", "#913838","#E8A22B")
+
+p1 <- ggplot(df, aes(x = q1, fill = q1)) +
+  geom_bar()+
+  theme_bw()+
+  scale_fill_manual(values= fruitcolors)+
+  theme(legend.position = "none")+ 
+  xlab("Fruit")+
+  ylab("Number of Participants")+
+  labs(title = "What is your favourite fruit?")
+
+p1
+
+```
