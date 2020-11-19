@@ -1,5 +1,5 @@
 # Documention for Shiny-Survey Creation
-##### Clemens Grof, Dimitry Phlekanov, Alina Asisof, Anita Meinke, Daniel Kwasnitschka
+##### Clemens Grof, Dimitry Phlekanov, Alina Asisof, Anita Meinke, Daniel Kwasnitschka, Guanghao You
 
 ###### 31.10.2020
 Task 1: Draft survey questions.

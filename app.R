@@ -3,7 +3,15 @@ library(googlesheets4)
 library(ggplot2)
 library(googledrive)
 
+# For local testing purposes (no deployment),
+# just call gs4_auth() for pop-up authentification:
+
+# gs4_auth()
+
+# AND comment out the next line that employs one-time cached token info
+
 gs4_auth(cache = ".secrets", email=TRUE)
+
 sheet_id = "13KUyEUe0RIIy_gWEHds407geJpg3HouZmPSqvOdaTYE"
 # full sheet link: 
 # https://docs.google.com/spreadsheets/d/13KUyEUe0RIIy_gWEHds407geJpg3HouZmPSqvOdaTYE/edit?usp=sharing
