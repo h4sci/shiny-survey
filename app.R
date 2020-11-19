@@ -4,7 +4,7 @@ library(ggplot2)
 library(googledrive)
 
 # For local testing purposes (no deployment),
-# just call gs4_auth() for pop-up authentification:
+# just call gs4_auth() for pop-up authentication:
 
 # gs4_auth()
 
