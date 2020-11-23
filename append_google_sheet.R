@@ -1,10 +1,14 @@
-library(googlesheets4)
-library(googledrive)
+# function for appending row (data.frame) to goolge sheet
 
-store_record <- function(dt){
-  spreadsheet <- gs4_get("survey_response") %>% sheet_append(dt)
+library(googlesheets4)
+
+sheet_id = '1v0Dhyxozn3qz6WW54ZS03_qqO12g1Nzf5gXLBhgSmP0'
+
+append_data <- function(dt){
+  sheet_append(ss = sheet_id,
+               data = dt)
 }
 
-response <- data.frame('Apple', 0,0,1,0,'Orange',4,4,3,1,1,'I want pancakes for breakfast!',as.Date('1996-01-09'))
+response <- data.frame('Apple', 0,0,1,1,'Banana',4,4,3,1,1,'Rooms were dirty!!',as.Date('1985-05-19'))
 
-store_record(response)
+append_data(response)
