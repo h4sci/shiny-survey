@@ -17,6 +17,10 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(googledrive)
 library(googlesheets4)
+library(wordcloud)
+library(tm)
+library(tidytext)
+
 
 
 
@@ -56,5 +60,25 @@ p1 <- ggplot(df, aes(x = FavoritefruitSC, fill = FavoritefruitSC)) +
   labs(title = "What is your favourite fruit?")
 
 p1
+
+```
+
+
+```{r question6, echo=FALSE}
+
+# Clean data
+df$Opinion_clean<-gsub("[[:punct:]]", "", df$Opinion)
+
+
+# Make data frame with words in one column and count in the other colum
+survey_words <- df %>% 
+  select(Opinion_clean) %>% unnest_tokens(word, Opinion_clean)
+
+wordscount <- survey_words %>% count(word, sort=TRUE)
+
+
+set.seed(123)
+wordcloud(words = wordscount$word, freq = wordscount$n, min.freq = 1)
+
 
 ```
