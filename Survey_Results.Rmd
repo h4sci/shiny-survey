@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #install.packages("ggplot2")
 library(ggplot2)
 library(googledrive)
+library(googlesheets4)
 
 
 
@@ -23,10 +24,16 @@ library(googledrive)
 
 # The following command works when running in the console, but not yet from markdown, because you need to log in by hand. Probably use drive_auth(email = "shiny.h4ss@gmail.com") later?
 #drive_download("~/response.csv", overwrite = TRUE)
+#df <- read.csv(file = 'response.csv')
 
+gs4_auth(email = "shiny.h4ss@gmail.com")
 
-df <- read.csv(file = 'response.csv')
+df<- read_sheet("https://docs.google.com/spreadsheets/d/1v0Dhyxozn3qz6WW54ZS03_qqO12g1Nzf5gXLBhgSmP0/edit#gid=619522926")
 
+#Delete blanks in Variable names
+names(df) <-gsub(" ", "", names(df))
+#Delete special characters
+names(df) <-gsub("-", "", names(df))
   
 ```
 
@@ -39,7 +46,7 @@ This survey was completed by `r nrow(df)` participants.
 # Colors
 fruitcolors=c("#86D76E", "#E3F25A", "#913838","#E8A22B")
 
-p1 <- ggplot(df, aes(x = Favorite.fruit...SC, fill = Favorite.fruit...SC)) +
+p1 <- ggplot(df, aes(x = FavoritefruitSC, fill = FavoritefruitSC)) +
   geom_bar()+
   theme_bw()+
   scale_fill_manual(values= fruitcolors)+
