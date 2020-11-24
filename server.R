@@ -2,6 +2,8 @@ library(shiny)
 library(googlesheets4)
 library(ggplot2)
 library(googledrive)
+library(shinydashboard)
+library(rsconnect)
 
 # For local testing purposes (no deployment),
 # just call gs4_auth() for pop-up authentication:
