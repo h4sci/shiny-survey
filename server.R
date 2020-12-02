@@ -11,10 +11,10 @@ library(rsconnect)
 # gs4_auth()
 
 # AND comment out the next line that employs one-time cached token info
+drive_auth(email = TRUE)
+gs4_auth()
 
-gs4_auth(cache = ".secrets", email=TRUE)
-
-sheet_id = "13KUyEUe0RIIy_gWEHds407geJpg3HouZmPSqvOdaTYE"
+sheet_id = "1v0Dhyxozn3qz6WW54ZS03_qqO12g1Nzf5gXLBhgSmP0"
 # full sheet link: 
 # https://docs.google.com/spreadsheets/d/13KUyEUe0RIIy_gWEHds407geJpg3HouZmPSqvOdaTYE/edit?usp=sharing
 
