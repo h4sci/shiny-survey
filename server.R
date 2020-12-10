@@ -2,19 +2,18 @@ library(shiny)
 library(googlesheets4)
 library(ggplot2)
 library(googledrive)
-library(shinydashboard)
+#library(shinydashboard)
 library(rsconnect)
 
-# For local testing purposes (no deployment),
-# just call gs4_auth() for pop-up authentication:
+# one-time cached token info
+gs4_auth(cache = ".secrets", email=TRUE)
 
-# gs4_auth()
+#drive_auth(email = TRUE)
+#gs4_auth()
 
-# AND comment out the next line that employs one-time cached token info
-drive_auth(email = TRUE)
-gs4_auth()
+sheet_id = "13KUyEUe0RIIy_gWEHds407geJpg3HouZmPSqvOdaTYE"
 
-sheet_id = "1v0Dhyxozn3qz6WW54ZS03_qqO12g1Nzf5gXLBhgSmP0"
+#sheet_id = "1v0Dhyxozn3qz6WW54ZS03_qqO12g1Nzf5gXLBhgSmP0"
 # full sheet link: 
 # https://docs.google.com/spreadsheets/d/13KUyEUe0RIIy_gWEHds407geJpg3HouZmPSqvOdaTYE/edit?usp=sharing
 
