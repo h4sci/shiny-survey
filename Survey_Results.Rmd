@@ -24,14 +24,20 @@ library(reshape2)
 
 
 
+#SET THIS FIRST
+#SET THIS FIRST
+#SET THIS FIRST
+#SET THIS FIRST
 
 #setwd("/home/student17/Shinyrep") 
+
+#################################
 
 # The following command works when running in the console, but not yet from markdown, because you need to log in by hand. Probably use drive_auth(email = "shiny.h4ss@gmail.com") later?
 #drive_download("~/response.csv", overwrite = TRUE)
 #df <- read.csv(file = 'response.csv')
 
-gs4_auth(email = "shiny.h4ss@gmail.com")
+gs4_auth(cache = ".secrets", email=TRUE)
 
 df<- read_sheet("https://docs.google.com/spreadsheets/d/1v0Dhyxozn3qz6WW54ZS03_qqO12g1Nzf5gXLBhgSmP0/edit#gid=619522926")
 
