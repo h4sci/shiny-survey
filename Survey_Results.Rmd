@@ -21,23 +21,15 @@ library(wordcloud)
 library(tm)
 library(tidytext)
 library(reshape2)
+library(dplyr)
 
-
-
-#SET THIS FIRST
-#SET THIS FIRST
-#SET THIS FIRST
-#SET THIS FIRST
-
-#setwd("/home/student17/Shinyrep") 
 
 #################################
 
-# The following command works when running in the console, but not yet from markdown, because you need to log in by hand. Probably use drive_auth(email = "shiny.h4ss@gmail.com") later?
-#drive_download("~/response.csv", overwrite = TRUE)
-#df <- read.csv(file = 'response.csv')
+# Change 
+#setwd("./shinyrep") 
 
-gs4_auth(cache = ".secrets", email=TRUE)
+gs4_auth(cache = ".secrets", email="shiny.h4ss@gmail.com")
 
 df<- read_sheet("https://docs.google.com/spreadsheets/d/1v0Dhyxozn3qz6WW54ZS03_qqO12g1Nzf5gXLBhgSmP0/edit#gid=619522926")
 
