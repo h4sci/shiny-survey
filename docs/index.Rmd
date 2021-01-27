@@ -1,3 +1,13 @@
+#!/usr/bin/env Rscript
+
+args <- commandArgs()
+fname <- normalizePath(sub("--file=", "", args[grepl("--file=", args)]))
+thisfile <- readLines(fname)
+newfname <- paste0(tempdir(), "/", basename(fname))
+writeLines(thisfile[-1:-which(thisfile == "q(\"no\")")], newfname)
+rmarkdown::render(newfname, output_dir = dirname(fname))
+q("no")
+
 ---
 title: "Shiny Survey Results"
 author: "Shiny Survey Team"
