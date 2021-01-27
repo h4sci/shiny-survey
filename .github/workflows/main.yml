@@ -16,7 +16,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - run: |
-          Rscript -e 'install.packages(c("ggplot2","googledrive","googlesheets4","wordcloud","tm","tidytext","reshape2","dplyr"))'
+          Rscript -e 'install.packages(c("ggplot2","googledrive","googlesheets4","wordcloud","tm","tidytext","reshape2","dplyr","remotes"))'-e"remotes::install_deps(dependencies = TRUE)"
           chmod +x docs/index.Rmd
           git config --local user.email "bot@h4sci.ch"
           git config --local user.name "Bill the bot"
